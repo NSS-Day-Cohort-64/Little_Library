@@ -125,3 +125,7 @@ export const getBooks = () => {
 export const getAuthors = () => {
     return structuredClone(Database.authors)
 }
+
+export const getChildren = () => {
+    return structuredClone(Database.children)
+}
