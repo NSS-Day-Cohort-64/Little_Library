@@ -1,4 +1,4 @@
-// Create a variable named Database 
+// Create a variable named Database
     // books, authors, children, genres, bookGenres, bookLogs
         // each of these will be an array of objects
 
@@ -34,7 +34,7 @@ const Database = {
         { id: 28, title: "The Jungle Book", pages: 144, authorId: 21 },
         { id: 29, title: "Heart of Darkness", pages: 72, authorId: 22 },
         { id: 30, title: "Lord Jim", pages: 428, authorId: 22 }
-    ], 
+    ],
     authors: [
         { id: 1, name: "Jane Austen" },
         { id: 2, name: "Harper Lee" },
@@ -116,4 +116,8 @@ const Database = {
         { id: 6, checkoutDate: "2023-06-09", isReturned: true, childId: 4, bookId: 5 },
         { id: 7, checkoutDate: "2023-09-09", isReturned: true, childId: 2, bookId: 14 },
     ],
+}
+
+export const getBooks = () => {
+    return structuredClone(Database.books)
 }
