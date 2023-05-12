@@ -1,6 +1,6 @@
 // Create a variable named Database
-    // books, authors, children, genres, bookGenres, bookLogs
-        // each of these will be an array of objects
+// books, authors, children, genres, bookGenres, bookLogs
+// each of these will be an array of objects
 
 const Database = {
     books: [
@@ -59,7 +59,7 @@ const Database = {
         { id: 21, name: "Rudyard Kipling" }
     ],
     genres: [
-    { id: 1, type: "Science Fiction" },
+        { id: 1, type: "Science Fiction" },
         { id: 2, type: "Mystery" },
         { id: 3, type: "Romance" },
         { id: 4, type: "Horror" },
@@ -128,4 +128,12 @@ export const getAuthors = () => {
 
 export const getChildren = () => {
     return structuredClone(Database.children)
+}
+
+export const getBookGenres = () => {
+    return structuredClone(Database.bookGenres)
+}
+
+export const getGenres = () => {
+    return structuredClone(Database.genres)
 }
