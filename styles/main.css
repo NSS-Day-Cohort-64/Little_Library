@@ -1,0 +1,20 @@
+.bookGenre {
+    display: flex;
+    flex-flow: column wrap;
+    border: dotted blue 3px;
+    margin: 3px;
+    padding: 5px;
+    border-radius: 15px;
+    flex-basis: 250px;
+    align-content: center;
+}
+
+.bookGenreBox {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+h2{
+    text-align: center;
+}

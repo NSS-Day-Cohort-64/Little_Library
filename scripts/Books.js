@@ -11,7 +11,7 @@ export const Books = () => {
     const authors = getAuthors()
     // create a variable to hold HTML representation
     // set it = to ""
-    let bookHTML = "<ul>"
+    let bookHTML = "<h1> Books </h1> <ul>"
     // iterate through all books
     for (const book of books) {
         // for each book add HTML representation to the HTML variable

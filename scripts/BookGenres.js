@@ -1,45 +1,34 @@
+import { getBookGenres, getBooks, getGenres } from "./Database.js"
 // create a variable and invoke get bookGenres
 // create a variable and invoke get books
 // create a variable and invoke get genres
-
+const genres = getGenres()
+const books = getBooks()
+const bookGenres = getBookGenres()
 // create a function 
-//create a variable named HTMLString to initialize our HTML representation
-// iterate genres 
-    // add article tag = genre type
-        // for each genre, iterate bookGenres
-            // if this genre.id === bookGenres.genreId
-                // find book.id === bookGenre.bookId
-                    // add single book to HTMLString
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// build HTML string inside a function
 export const createBookGenreHTML = () => {
-    const genres = getGenres()
-    // create a variable to hold HTML representation
-    // set it = to ""
-    let genreHTMLString = `<ul>`
-    // iterate through all genre
+    //create a variable named HTMLString to initialize our HTML representation
+    let bookGenreHTMLString = `<section class = bookGenreBox >`
+    // iterate genres 
     for (const genre of genres) {
-        // display genre's name 
-        genreHTMLString += `<li>${genre.type} </li>`
-    }
-    genreHTMLString += `</ul>`
+        // add article tag = genre type
+        bookGenreHTMLString += `<div class = bookGenre> <h2>${genre.type} </h2> <ul>`
+        // for each genre, iterate bookGenres
+        for (const bookGenre of bookGenres) {
+            // if this genre.id === bookGenres.genreId
+            if (genre.id === bookGenre.genreId){
+                let matchingBooks = books.filter(book => book.id === bookGenre.bookId)
+                // find book.id === bookGenre.bookId
+                for (const matchingBook of matchingBooks){
+                    // add single book to HTMLString
+                    bookGenreHTMLString += `<li> ${matchingBook.title} </li>`
+                }
+            }
 
-    return genreHTMLString
+        }
+        bookGenreHTMLString += `</ul> </div>`
+    }
+    bookGenreHTMLString += `</section>`
+    // return HTMLString
+    return bookGenreHTMLString
 }
